@@ -15,7 +15,7 @@ def findTheDifference_online(s: str, t:str) -> str:
     sum = 0
     while i < len(s):
         sum += (ord(t[i]) - ord(s[i]))
-        i+= 1
+        i += 1
     sum += ord(t[i])
     return chr(sum)
 
