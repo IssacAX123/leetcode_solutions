@@ -9,7 +9,7 @@ def findTheDifference_issac(s: str, t: str) -> str:
             if t_counter[key] != s_counter[key]:
                 return key
 
-print(findTheDifference("a", "aa"))
+print(findTheDifference_issac("a", "aa"))
 
 
 
