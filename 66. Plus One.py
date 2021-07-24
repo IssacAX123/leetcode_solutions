@@ -26,6 +26,8 @@ def plus_one_issac_2(integer):
         else:
             integer.insert(0, one)
             one = 0
+        i -= 1
+    return integer
 
 
 # slower than issac 2
@@ -40,3 +42,5 @@ def plus_one_online(digits):
          digits[0] = 1          #eg:[9,9,9] --> [1,0,0,0]
          digits.append(0)
      return digits
+
+print(plus_one_issac_2([9,9,9]))
