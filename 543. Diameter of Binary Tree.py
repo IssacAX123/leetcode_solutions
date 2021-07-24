@@ -24,31 +24,26 @@ class TreeNode:
     def __str__(self):
         return str(self.val)
 
-def diameterOfBinaryTree_issac(root: TreeNode) -> int:
-    def dfs(root:TreeNode, diameter=1) -> int:
-        print(diameter, root)
-        if root.left is None and root.right is None:
-            return diameter
-        diameter_left = diameter
-        diameter_right = diameter
-        if root.left is not None:
-            diameter_left += dfs(root.left, diameter_left)
-        if root.right is not None:
-            diameter_right += dfs(root.right, diameter_right)
-        if diameter_left < diameter_right:
-            diameter = diameter_right
-        else:
-            diameter = diameter_left
-        return diameter
 
-    diameter = 0
-    if root.left is not None:
-        diameter += dfs(root.left)
-    if root.right is not None:
-        diameter += dfs(root.right)
-    return diameter
+def diameterOfBinaryTree_online(root: TreeNode) -> int:
+    result = 0
+    def dfs(root: TreeNode):
+        nonlocal result
+        if root is None:
+            return -1
+        left = dfs(root.left)
+        right = dfs(root.right)
+        result = max(result, left + right + 2)
+        return 1 + max(left, right)
+
+    dfs(root)
+    return result
 
 
 root = TreeNode(1)
 root.add(2)
-print(diameterOfBinaryTree_issac(root))
+root.add(3)
+root.add(4)
+root.add(5)
+root.add(6)
+print(diameterOfBinaryTree_online(root))
