@@ -1,3 +1,4 @@
+#faster
 def addStrings_issac(num1: str, num2: str) -> str:
     if len(num1) > len(num2):
         min_num = num2
@@ -32,8 +33,28 @@ def addStrings_issac(num1: str, num2: str) -> str:
 
     return result[::-1]
 
+#space
+def addStrings_online(num1: str, num2: str) -> str:
+    result = ""
+    i = len(num1) - 1
+    j = len(num2) - 1
+    carry = 0
+    while i >= 0 or j >= 0:
+        digit_sum = carry
+        if i >= 0:
+            digit_sum += ord(num1[i]) - ord("0")
+            i -= 1
 
-print(addStrings("0", "0"))
+        if j >= 0:
+            digit_sum += ord(num2[j]) - ord("0")
+            j -= 1
 
+        result += str(digit_sum % 10)
+        carry = digit_sum // 10
+
+    if carry == 1:
+        result += "1"
+
+    return result[::-1]
 
 
