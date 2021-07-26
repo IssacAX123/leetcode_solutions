@@ -1,10 +1,11 @@
+#faster
 def licenseKeyFormatting_issac(s: str, k: int) -> str:
     dash_count = 0
     for char in s:
         if char == "-":
             dash_count += 1
-    groups = (len(s)-dash_count) // k
-    remaining = (len(s)-dash_count) % k
+    groups = (len(s) - dash_count) // k
+    remaining = (len(s) - dash_count) % k
     arrangment = [remaining] + [k for i in range(groups)] if remaining != 0 else [k for i in range(groups)]
     new_s = ""
     arrangment_pointer = 0
@@ -21,4 +22,14 @@ def licenseKeyFormatting_issac(s: str, k: int) -> str:
     return new_s
 
 
-print(licenseKeyFormatting_issac("5F3Z-2e-9-w", 4))
+# really slow
+def licenseKeyFormatting_online(s: str, k: int) -> str:
+    s = s.upper()
+    s = s.replace("-", "")
+    new_string = s
+    for i in range(len(s) - k-1, -1, -k):
+        new_string = new_string[:i+1] + "-" + new_string[i + 1:]
+    return new_string
+
+
+print(licenseKeyFormatting_online("2-5g-3-J", 2))
