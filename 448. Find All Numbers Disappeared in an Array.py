@@ -1,5 +1,5 @@
 
-# ewach element is an index of the array. the elements that are not negative is because they have not been accessed 
+# each element is an index of the array. the elements that are not negative is because they have not been accessed
 def findDisappearedNumbers_online(nums):
     for n in nums:
         i = abs(n) - 1

@@ -11,6 +11,7 @@ def isPowerOfThree_issac(n: int) -> bool:
         else:
             return False
 
+
 def isPowerOfThree_online(n: int) -> bool:
     while n >= 3:
         if n % 3 != 0:
@@ -18,4 +19,4 @@ def isPowerOfThree_online(n: int) -> bool:
         n = n/3
     return n == 1
 
-print(isPowerOfThree_issac(0))
+print(isPowerOfThree_online(1))
