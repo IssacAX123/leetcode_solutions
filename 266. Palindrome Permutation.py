@@ -1,4 +1,5 @@
 import collections
+import timeit
 
 
 def palindrome_permutation_issac(s: str) -> bool:
@@ -11,4 +12,13 @@ def palindrome_permutation_issac(s: str) -> bool:
             single_odd_found = True
     return True
 
-print(palindrome_permutation_issac("racecap"))
+
+# faster
+def palindrome_permutation_issac_2(s: str) -> bool:
+    counter = collections.Counter(s)
+    count = 0
+    for key in counter:
+        count += counter[key] % 2
+    return count <= 1
+
+
