@@ -11,5 +11,5 @@ def reverseStr_issac(s: str, k: int) -> str:
             end -= 1
     return "".join(s_array)
 
-# can also us es_array[i:min(i + k, len(s))] = s_array[i:min(i + k, len(s))][::-1] for sublist reversal
+# can also use s_array[i:min(i + k, len(s))] = s_array[i:min(i + k, len(s))][::-1] for sublist reversal
 print(reverseStr_issac("abcd", 4))
