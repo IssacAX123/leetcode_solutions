@@ -24,7 +24,7 @@ def setZeroes_issac(matrix: List[List[int]]) -> None:
     for row in matrix:
         print(row)
 
-print(setZeroes(
+print(setZeroes_issac(
 [[1,1,1],
  [1,0,1],
  [1,1,1]]))
