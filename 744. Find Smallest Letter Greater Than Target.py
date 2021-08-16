@@ -10,7 +10,7 @@ def nextGreatestLetter(letters: List[str], target: str) -> str:
     front = 0
     back = len(letters) - 1
     while front + 1 < back:
-        mid = front + (back - front) // 2
+        mid = front + (back - front) / 2
         if letters[mid] <= target:
             front = mid
         else:
